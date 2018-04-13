@@ -1,0 +1,54 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>  send  </title>
+
+<script>
+
+               function load(bFlag)
+{
+                 if(b==0)
+                    alert("send successfully！");
+                 else if (b==1)
+                     alert("server refused！");
+}
+</script>
+
+</head>
+
+<body  onload="load(0)"   >
+
+
+      <div >
+
+
+
+         <form action="/callsend/" method="post"    >
+        {%csrf_token%}
+            <p> Subject  </p>
+           <input  type="text"  name="Subject"  value='this is subject ' id="Subject"  >
+             <p> Send  To  </p>
+           <input  type="text"    value={{ request.user.email }}     name="SendTo"   id="SendTo"  >
+           <div>
+                <p> Content  </p>
+<textarea name="Content"     id="Content"  cols=30 rows=4>
+  this is  email content
+</textarea>
+</div>
+
+ <p><input type="submit" value="Send email" /></p>
+</form>
+
+          </br></br></br></br>
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>   inbox </title>
+
+    <link rel="stylesheet" href="/static/css/style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+<div style="text-align:center;clear:both;">
+
+</div>
+
+       <div   style=";  width:900px; max-height:600px; margin:auto; overflow:auto;"    >
+
+    <a  href="/fecthall/" >  Refresh inbox   </a>
+       </br>
+
+      <table  border="1"  width="100%"  >
+
+           <tr style="color:blue; " >
+
+               <th><h3     >From </h3></th>
+
+    <th><h3     >subject</h3></th>
+    <th><h3   > content  </h3></th>
+
+
+  </tr>
+
+
+
+          {% for myEmail in emailList %}
+  <tr>
+   <td width="30%">{{ myEmail.From}}   </td>
+    <td width="20%">{{ myEmail.Subject }}   </td>
+    <td width="50%">    {{ myEmail.Content }}                </td>
+
+  </tr>
+{% endfor %}
+
+
+
+</table>
+
+
+
+    </div>
+  <script src="/static/js/index.js"></script>
+
+</body>
+
+</html>
